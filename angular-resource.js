@@ -550,6 +550,10 @@ angular.module('ngResource', ['ng']).
             protocolAndIpv6 = '';
 
           var urlParams = self.urlParams = Object.create(null);
+          if(!url){
+            console.log("url is null!");
+            url = "/";
+          }
           forEach(url.split(/\W/), function(param) {
             if (param === 'hasOwnProperty') {
               throw $resourceMinErr('badname', 'hasOwnProperty is not a valid parameter name.');
